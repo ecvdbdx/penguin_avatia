@@ -7,7 +7,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            cryptos: []
+            cryptos: undefined
         };
     }
     componentDidMount() {
@@ -18,15 +18,21 @@ class App extends Component {
         });
     }
     render() {
+        // console.log("state", this.state.cryptos && this.state.cryptos.Data.Data);
+
+        const values = this.state.cryptos && this.state.cryptos.Data.Data.map(o => o.open);
+        /* {Object.keys(this.state.cryptos.Data.Data).map((key, index) => (
+                            <div key={index}>
+                                <span>{key}</span>
+                                <span>{this.state.cryptos[key]}</span>
+                            </div>
+                        ))}
+                        <Chart data={this.state.cryptos.USD} /> */
+
         return (
             <div className="App">
-                {/* {Object.keys(this.state.cryptos).map((key, index) => (
-                    <div key={index}>
-                        <span>{key}</span>
-                        <span>{this.state.cryptos[key]}</span>
-                    </div>
-                ))} */}
-                <Chart data={this.state.cryptos.USD} />
+                <p>toto</p>
+                <Chart data={values} />
             </div>
         );
     }
