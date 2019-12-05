@@ -11,28 +11,18 @@ class App extends Component {
         };
     }
     componentDidMount() {
-        axios.get("https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=EUR&limit=10").then(res => {
+        axios.get("https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=EUR&limit=60").then(res => {
             const cryptos = res.data;
-            console.log(cryptos.Data.Data);
             this.setState({ cryptos: cryptos });
         });
     }
     render() {
-        // console.log("state", this.state.cryptos && this.state.cryptos.Data.Data);
-
-        const values = this.state.cryptos && this.state.cryptos.Data.Data.map(o => o.open);
-        /* {Object.keys(this.state.cryptos.Data.Data).map((key, index) => (
-                            <div key={index}>
-                                <span>{key}</span>
-                                <span>{this.state.cryptos[key]}</span>
-                            </div>
-                        ))}
-                        <Chart data={this.state.cryptos.USD} /> */
+        const values = this.state.cryptos ? this.state.cryptos.Data.Data.map(o => o.open) : [];
+        const time = this.state.cryptos ? this.state.cryptos.Data.Data.map(o => o.time) : [];
 
         return (
             <div className="App">
-                <p>toto</p>
-                <Chart data={values} />
+                <Chart data={values} time={time} />
             </div>
         );
     }
