@@ -11,23 +11,21 @@ class App extends Component {
         };
     }
     componentDidMount() {
-        axios.get("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR").then(res => {
+        axios.get("https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=EUR&limit=10").then(res => {
             const cryptos = res.data;
-            // console.log(cryptos)
+            console.log(cryptos.Data.Data);
             this.setState({ cryptos: cryptos });
         });
     }
     render() {
-        console.log("state", this.state);
-
         return (
             <div className="App">
-                {Object.keys(this.state.cryptos).map((key, index) => (
+                {/* {Object.keys(this.state.cryptos).map((key, index) => (
                     <div key={index}>
                         <span>{key}</span>
                         <span>{this.state.cryptos[key]}</span>
                     </div>
-                ))}
+                ))} */}
                 <Chart data={this.state.cryptos.USD} />
             </div>
         );
