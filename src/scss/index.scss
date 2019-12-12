@@ -1,6 +1,9 @@
 // base
-@import "./base/reset";
-@import "./base/typography";
+@import './base/reset';
+@import './base/typography';
 
 // utils
-@import "./utils/variables";
+@import './utils/variables';
+
+// layout
+@import './layout/commons';

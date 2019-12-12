@@ -1,0 +1,21 @@
+.App {
+	font-family: "Roboto", sans-serif;
+	width: 100vw;
+	margin: 4rem auto;
+	max-width: 70vw;
+	.chartjs-size-monitor {
+		width: 100%;
+	}
+	.filters {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+		button {
+			margin: 0 1rem;
+			&.active {
+				text-decoration: underline;
+			}
+		}
+	}
+}
