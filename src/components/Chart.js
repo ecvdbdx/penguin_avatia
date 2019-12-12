@@ -11,11 +11,10 @@ function makeData(x, y) {
 		labels: date,
 		datasets: [
 			{
-				label: 'Bitcoin',
 				data: y,
 				pointHitRadius: '1',
 				pointRadius: '0',
-				backgroundColor: 'rgba(24, 36, 254, .4)',
+				backgroundColor: 'rgba(24, 36, 254, 0)',
 				borderColor: '#1824fe',
 				borderWidth: '2'
 			}
@@ -45,7 +44,7 @@ class Chart extends Component {
 			scales: {
 				xAxes: [
 					{
-						display: true,
+						display: false,
 						gridLines: {
 							display: true,
 							lineWidth: 0.5,
@@ -59,7 +58,7 @@ class Chart extends Component {
 				],
 				yAxes: [
 					{
-						display: true,
+						display: false,
 						gridLines: {
 							display: true,
 							lineWidth: 0.5,
