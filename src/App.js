@@ -3,8 +3,8 @@ import './scss/components/App.scss'
 import axios from 'axios'
 import Chart from './components/Chart'
 
-function createUrl(histo, limit) {
-	return (`https://min-api.cryptocompare.com/data/v2/histo${histo}?fsym=BTC&tsym=EUR&limit=${limit}`);
+function createUrl(histo, limit, aggregate) {
+	return (`https://min-api.cryptocompare.com/data/v2/histo${histo}?fsym=BTC&tsym=EUR&limit=${limit}&aggregate=${aggregate}`);
 }
 
 class App extends Component {
@@ -23,34 +23,40 @@ class App extends Component {
 		if (prevState.selected !== this.state.selected) {
 			console.log('coucou', prevState.selected, this.state.selected)
 			let histo = '';
-			let limit = '';
+			let limit = 60;
+			let aggregate= 1;
 			switch (this.state.selected) {
 				case 'hour':
 					histo = 'minute';
 					limit = 60;
+					aggregate = 1;
 					break;
 				case 'day':
 					histo = 'minute';
-					limit = 1440;
+					limit = 60;
+					aggregate = 24;
 					break;
 				case 'week':
 					histo = 'hour';
-					limit = 1260;
+					limit = 60;
+					aggregate = 3;
 					break;
 				case 'month':
-					histo = 'day';
-					limit = 30;
+					histo = 'hour';
+					limit = 60;
+					aggregate = 12;
 					break;
 				case 'year':
 					histo = 'day';
-					limit = 365;
+					limit = 60;
+					aggregate = 6;
 					break;
 				default:
 					histo = 'minute';
-					limit = 1440;
+					limit = 60;
+					aggregate = 1;
 			}
-			axios.get(createUrl(histo, limit)).then(res => {
-				this.setState({ cryptos: undefined });
+			axios.get(createUrl(histo, limit, aggregate)).then(res => {
 				this.setState({ cryptos: res.data });
 			})
 		}
@@ -58,7 +64,7 @@ class App extends Component {
 
 	componentDidMount() {
 		// Default scale on mount
-		this.updateScale('day');
+		this.updateScale('hour');
 	}
 	render() {
 		// const currencyName = this.state.crypto ? this.state.crypto.Data.Data
