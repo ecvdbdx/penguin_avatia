@@ -54,7 +54,7 @@ class Chart extends Component {
 							color: '#e3e5e9'
 						},
 						scaleLabel: {
-							display: true,
+							display: false,
 							labelString: 'Hour'
 						},
 						// type: 'time',
@@ -67,7 +67,7 @@ class Chart extends Component {
 				],
 				yAxes: [
 					{
-						display: true,
+						display: false,
 						gridLines: {
 							display: false,
 							lineWidth: 0.5,
@@ -79,7 +79,7 @@ class Chart extends Component {
 						},
 						ticks: {
 							autoSkip: true,
-							maxTicksLimit: 8
+							//maxTicksLimit: 8
 						}
 					}
 				]
