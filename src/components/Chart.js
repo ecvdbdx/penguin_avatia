@@ -4,7 +4,7 @@ import moment from 'moment'
 
 function makeData(x, y) {
 	const date = x.map(element => {
-		return moment.unix(element).format('D/M/Y HH:mm')
+		return moment.unix(element).format('ddd Do MMM Y')
 	})
 
 	return {
@@ -14,7 +14,10 @@ function makeData(x, y) {
 				data: y,
 				pointHitRadius: '1',
 				pointRadius: '0',
-				backgroundColor: 'rgba(24, 36, 254, 0)',
+				pointHoverRadius: '5',
+				pointHoverBackgroundColor: '#fff',
+				pointHoverBorderColor: 'rgba(24, 36, 254, 1)',
+				backgroundColor: 'transparent',
 				borderColor: '#1824fe',
 				borderWidth: '1'
 			}
@@ -29,7 +32,7 @@ class Chart extends Component {
 				display: false
 			},
 			tooltips: {
-				intersect: false,
+				// intersect: false,
 				backgroundColor: '#fff',
 				titleFontFamily: 'Roboto',
 				titleFontColor: '#7e8a96',
@@ -44,29 +47,39 @@ class Chart extends Component {
 			scales: {
 				xAxes: [
 					{
-						display: false,
+						display: true,
 						gridLines: {
-							display: true,
+							display: false,
 							lineWidth: 0.5,
 							color: '#e3e5e9'
 						},
 						scaleLabel: {
 							display: true,
 							labelString: 'Hour'
+						},
+						// type: 'time',
+						ticks: {
+							autoSkip: true,
+							maxTicksLimit: 10,
+							maxRotation: 0
 						}
 					}
 				],
 				yAxes: [
 					{
-						display: false,
+						display: true,
 						gridLines: {
-							display: true,
+							display: false,
 							lineWidth: 0.5,
 							color: '#e3e5e9'
 						},
 						scaleLabel: {
 							display: true,
 							labelString: 'Value in EUR'
+						},
+						ticks: {
+							autoSkip: true,
+							maxTicksLimit: 8
 						}
 					}
 				]
