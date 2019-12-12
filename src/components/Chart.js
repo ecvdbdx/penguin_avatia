@@ -16,7 +16,7 @@ function makeData(x, y) {
 				pointRadius: '0',
 				backgroundColor: 'rgba(24, 36, 254, 0)',
 				borderColor: '#1824fe',
-				borderWidth: '2'
+				borderWidth: '1'
 			}
 		]
 	}
