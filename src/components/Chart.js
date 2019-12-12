@@ -4,7 +4,7 @@ import moment from 'moment'
 
 function makeData(x, y) {
 	const date = x.map(element => {
-		return moment.unix(element).format('HH:mm')
+		return moment.unix(element).format('D/M/Y HH:mm')
 	})
 
 	return {
