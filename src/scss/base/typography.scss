@@ -1,0 +1,42 @@
+// --------------------------------------------------
+// This file contains all styles for text.
+// --------------------------------------------------
+
+html {
+	font-size: $f-xs;
+	@media all and (min-width: $sm) {
+		font-size: $f-sm;
+	}
+	@media all and (min-width: $md) {
+		font-size: $f-md;
+	}
+	@media all and (min-width: $lg) {
+		font-size: $f-lg;
+	}
+	@media all and (min-width: $xl) {
+		font-size: $f-xl;
+	}
+	@media all and (min-width: $xxl) {
+		font-size: $f-xxl;
+	}
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.title {
+	background: $purple;
+	padding: 2rem 0 4rem;
+	h1 {
+		font-size: 2rem;
+		font-weight: 500;
+		color: $white;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+	p {
+		color: $white;
+		line-height: 1.4;
+	}
+}

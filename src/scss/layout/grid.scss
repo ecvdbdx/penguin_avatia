@@ -1,0 +1,12 @@
+// --------------------------------------------------
+// This file contains all grid system.
+// --------------------------------------------------
+
+body {
+	background: $lightgray;
+}
+
+.container {
+	width: $container;
+	margin: 0 auto;
+}

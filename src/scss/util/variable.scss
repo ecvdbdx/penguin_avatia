@@ -1,0 +1,52 @@
+// --------------------------------------------------
+// This file contains all variables.
+// --------------------------------------------------
+
+// ----- 1. Size system
+
+// From 0px to 479px, font-size = 1vw
+$xs: 0px;
+$f-xs: 16px;
+
+// From 480px to 735px, font-size = 1vw
+$sm: 480px;
+$f-sm: 2.5vw;
+
+// From 736px to 989px, font-size = 1vw
+$md: 736px;
+$f-md: 1.75vw;
+
+// From 990px to 1279px, font-size = 1vw
+$lg: 980px;
+$f-lg: 1.5vw;
+
+// From 1280px to 1689px, font-size = 1vw
+$xl: 1280px;
+$f-xl: 1vw;
+
+// From 1688px to infinite, font-size = 16px
+$xxl: 1690px;
+$f-xxl: 16px;
+
+// ----- 2. Grid system
+
+$container: 84vw;
+$container-full: 100vw;
+
+// ----- 3. Colors
+
+$dark: #050f19;
+$white: #ffffff;
+$gray: #7e8a96;
+$lightgray: #f1f3f6;
+$purple: #4a4fff;
+$green: #39c379;
+$red: #ed5116;
+
+.green {
+	color: $green;
+}
+
+.red {
+	color: $red;
+}
