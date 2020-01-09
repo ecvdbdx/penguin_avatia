@@ -1,0 +1,37 @@
+.list {
+	transform: translateY(-2rem);
+	ul {
+		li {
+			background: $white;
+			padding: 1.5rem;
+			border-radius: 4px;
+			box-shadow: 0 0 10px rgba($dark, 0.02);
+			position: relative;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			div {
+				display: flex;
+				align-items: center;
+			}
+			p {
+				&.list-name {
+					font-weight: 500;
+				}
+				&.list-price {
+					font-size: 0.85rem;
+					margin-right: 0.5rem;
+					color: $gray;
+					font-weight: 500;
+				}
+				&.list-percentage {
+					font-size: 0.85rem;
+				}
+			}
+			&:not(:last-of-type) {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}

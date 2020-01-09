@@ -1,0 +1,23 @@
+// --------------------------------------------------
+// This file contains all navigation style.
+// --------------------------------------------------
+
+.nav-mobile {
+	padding: 2rem 0;
+	background: $purple;
+	&-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		a {
+			font-size: 1.4rem;
+			font-weight: 700;
+			color: $white;
+		}
+		svg {
+			width: 1.5rem;
+			height: 1.5rem;
+			cursor: pointer;
+		}
+	}
+}

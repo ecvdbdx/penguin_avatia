@@ -1,9 +1,41 @@
-// base
-@import './base/reset';
-@import './base/typography';
+// --------------------------------------------------
+// This file contains all scss files import.
+// --------------------------------------------------
 
-// utils
-@import './utils/variables';
+// ----- 1. Vendor
 
-// layout
-@import './layout/commons';
+@import './vendor/destyle.scss';
+
+// ----- 2. Configuration and helpers
+
+@import './util/variable.scss', './util/mixin.scss', './util/functions.scss';
+
+// ----- 3. Base stuff
+
+@import './base/font.scss', './base/typography.scss';
+
+// ----- 4. Layout
+
+@import './layout/grid.scss', './layout/navigation.scss', './layout/header.scss', './layout/footer.scss', './layout/form.scss';
+
+// ----- 5. Component
+
+@import './component/button.scss', './component/dropdown.scss', './component/slider.scss', './component/ListCurrency.scss';
+
+.App {
+	.chartjs-size-monitor {
+		width: 100%;
+	}
+	.filters {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+		button {
+			margin: 0 1rem;
+			&.active {
+				text-decoration: underline;
+			}
+		}
+	}
+}
